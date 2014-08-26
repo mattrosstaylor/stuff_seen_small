@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+	<form method="POST" action="guess">
+		<img class="small" src="static/{{image}}">
+		<ul class="candidates">
+			{% for candidate in candidates %}
+				<li class="candidate"><input type="submit" value="{{candidate}}" name="guess"/></li>
+			{% endfor %}
+		</ul>
+		<div class="clearer"/>
+	</form>
+{% endblock %}

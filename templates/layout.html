@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+	<title>what {{category}} is this?</title>
+	<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<h1>what {{category}} is this?</h1>
+		</div>
+		<div id="content">
+			{% block body %}{% endblock %}
+		</div>
+	</div>
+</body>
+</html>
