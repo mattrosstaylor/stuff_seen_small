@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request
+from flask.ext.pymongo import PyMongo
 import random
 
 app = Flask(__name__)
+mongo = PyMongo(app)
+
 
 @app.route('/')
 def home():
@@ -10,7 +13,7 @@ def home():
 @app.route('/view')
 def view():
 	category = "website"
-	image = '1.png'
+	image = 'youtube.jpg'
 	candidates = [
 		'YouTube',
 		'Vimeo',
@@ -28,6 +31,7 @@ def view():
 @app.route('/guess', methods=['POST'])
 def guess():
 	return request.form['guess']
+
 
 if __name__ == '__main__':
 	app.debug = True

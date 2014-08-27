@@ -49,12 +49,15 @@ table {
 
 /* my styles */
 body {
-	font-family: sans-serif, 'Noto Sans';
 	background: #EED;
 }
 
+body, input {
+	font-family: 'Quantico', sans serif;
+}
+
 #wrapper {
-	width: 640px;
+	width: 648px;
 	margin: 20px auto;
 	padding: 10px;
 	background: #110;
@@ -67,14 +70,15 @@ body {
 	font-size: 45px;
 	font-weight: bold;
 	letter-spacing: 3px;
+	padding-bottom: 5px;
 }
 
 img.small {
-	width: 100%;	
+	margin: 8px 0;
 }
 
 .candidate {
-	width: 209px;
+	width: 212px;
 	margin: 2px;
 	padding: 0;
 	float: left;
