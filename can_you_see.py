@@ -1,10 +1,11 @@
+#!/usr/bin/python
+
 from flask import Flask, render_template, request
 from flask.ext.pymongo import PyMongo
 import random
 
 app = Flask(__name__)
 mongo = PyMongo(app)
-
 
 @app.route('/')
 def home():
@@ -31,7 +32,6 @@ def view():
 @app.route('/guess', methods=['POST'])
 def guess():
 	return request.form['guess']
-
 
 if __name__ == '__main__':
 	app.debug = True

@@ -1,12 +1,17 @@
-#!/bin/python
+#!/usr/bin/python
 
 from PIL import Image
 
-original = Image.open('static/images/master/youtube.jpg')
-(width, height) = original.size
-scale1 = 40.0/width
-scale2 = 640.0/width
+sizes = [10, 20, 40, 80, 160, 320]
 
-downscaled = original.resize((int(width*scale1),int(height*scale1)), Image.ANTIALIAS)
-upscaled = downscaled.resize((int(width*scale2),int(height*scale2)), Image.NEAREST)
-upscaled.save('static/images/processed/youtube.jpg')
+original = Image.open('source_images/youtube.jpg')
+(width, height) = original.size
+restore = 640.0/width
+
+for size in sizes:
+	scale = float(size)/width
+	downscaled = original.resize((int(width*scale),int(height*scale)), Image.ANTIALIAS)
+	upscaled = downscaled.resize((int(width*restore),int(height*restore)), Image.NEAREST)
+	name = 'youtube-' + str(size)
+	print name
+	upscaled.save('static/images/' +name +'.jpg')
